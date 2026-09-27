@@ -7,133 +7,907 @@
 
     <title>Rachana M A | Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            line-height: 1.6;
+
+            /* Background colors */
+            background: linear-gradient(
+                135deg,
+                #eaf2ff,
+                #f4edff,
+                #e8faff
+            );
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        nav {
+            width: 100%;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.90);
+
+            backdrop-filter: blur(10px);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #2457d6;
+        }
+
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+
+        nav ul li a {
+            text-decoration: none;
+            color: #172033;
+
+            font-size: 17px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        nav ul li a:hover {
+            color: #2457d6;
+        }
+
+
+        /* =========================
+           HOME / HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 70px 20px;
+        }
+
+
+        .hero h1 {
+            font-size: 58px;
+            color: #111827;
+
+            margin-bottom: 18px;
+        }
+
+
+        .hero h1 span {
+            color: #2457d6;
+        }
+
+
+        .hero h2 {
+            font-size: 30px;
+            color: #315fd3;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero p {
+            max-width: 850px;
+
+            font-size: 20px;
+
+            color: #4b5563;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 32px;
+
+            background: #2457d6;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 6px 18px rgba(36, 87, 214, 0.30);
+        }
+
+
+        .btn:hover {
+            background: #1742ad;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px rgba(36, 87, 214, 0.35);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 90px 8%;
+
+            text-align: center;
+        }
+
+
+        section h2 {
+            font-size: 42px;
+
+            color: #111827;
+
+            margin-bottom: 35px;
+        }
+
+
+        section h2::after {
+            content: "";
+
+            display: block;
+
+            width: 75px;
+            height: 4px;
+
+            background: #2457d6;
+
+            border-radius: 5px;
+
+            margin: 12px auto 0;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-box {
+            max-width: 950px;
+
+            margin: auto;
+
+            background: rgba(255, 255, 255, 0.85);
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .about-box p {
+            font-size: 20px;
+
+            color: #4b5563;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-container {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            flex-wrap: wrap;
+
+            gap: 25px;
+
+            max-width: 1100px;
+
+            margin: 40px auto 0;
+        }
+
+
+        .skill {
+
+            min-width: 190px;
+
+            background: white;
+
+            padding: 25px 30px;
+
+            border-radius: 16px;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            color: #1f2937;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.08);
+
+            transition: all 0.3s ease;
+        }
+
+
+        .skill:hover {
+
+            transform: translateY(-8px);
+
+            background: #2457d6;
+
+            color: white;
+
+            box-shadow:
+                0 12px 25px rgba(36, 87, 214, 0.30);
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            flex-wrap: wrap;
+
+            gap: 30px;
+
+            margin-top: 40px;
+        }
+
+
+        .project-card {
+
+            width: 320px;
+
+            background: white;
+
+            padding: 32px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+
+            transition: all 0.3s ease;
+        }
+
+
+        .project-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+
+        .project-card h3 {
+
+            font-size: 24px;
+
+            color: #2457d6;
+
+            margin-bottom: 15px;
+        }
+
+
+        .project-card p {
+
+            font-size: 17px;
+
+            color: #6b7280;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* Project button */
+
+        .project-btn {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding: 11px 22px;
+
+            background: #2457d6;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 25px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .project-btn:hover {
+
+            background: #1742ad;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .contact-box p {
+
+            font-size: 19px;
+
+            color: #4b5563;
+        }
+
+
+        /* =========================
+           SOCIAL LINKS
+        ========================= */
+
+        .social-links {
+
+            margin-top: 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .social-links a {
+
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            background: #2457d6;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            transition: all 0.3s ease;
+
+            box-shadow:
+                0 5px 15px rgba(36, 87, 214, 0.25);
+        }
+
+
+        .social-links a:hover {
+
+            background: #1742ad;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(36, 87, 214, 0.35);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            background: #172554;
+
+            color: white;
+
+            font-size: 16px;
+
+            margin-top: 30px;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav ul {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .hero h1 {
+
+                font-size: 40px;
+            }
+
+
+            .hero h2 {
+
+                font-size: 23px;
+            }
+
+
+            .hero p {
+
+                font-size: 17px;
+            }
+
+
+            section h2 {
+
+                font-size: 32px;
+            }
+
+
+            .about-box {
+
+                padding: 25px;
+            }
+
+
+            .about-box p {
+
+                font-size: 18px;
+            }
+
+
+            .project-card {
+
+                width: 100%;
+
+                max-width: 350px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Rachana M A</h1>
-        <p>Artificial Intelligence & Machine Learning Student</p>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            Rachana M A
+        </div>
 
 
-    <!-- Home -->
-    <section id="home">
+        <ul>
 
-        <h1>Hi, I'm Rachana M A 👋</h1>
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
-        <h2>Artificial Intelligence & Machine Learning Student</h2>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <h1>
+            Hi, I'm <span>Rachana M A</span> 👋
+        </h1>
+
+
+        <h2>
+            Artificial Intelligence & Machine Learning Student
+        </h2>
+
 
         <p>
             Welcome to my portfolio. I am an engineering student
-            interested in programming, technology and Artificial Intelligence.
+            interested in technology, programming and Artificial Intelligence.
+            I enjoy learning new technologies and building projects.
         </p>
+
+
+        <a href="#about" class="btn">
+            Explore My Portfolio
+        </a>
 
     </section>
 
 
-    <!-- About -->
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
     <section id="about">
 
-        <h2>About Me</h2>
-
-        <p>
-            I am an Artificial Intelligence and Machine Learning engineering
-            student. I enjoy learning programming, exploring new technologies
-            and building projects.
-        </p>
-
-    </section>
+        <h2>
+            About Me
+        </h2>
 
 
-    <!-- Skills -->
-    <section id="skills">
-
-        <h2>Skills</h2>
-
-        <div class="skills">
-
-            <div class="skill">Python</div>
-
-            <div class="skill">C Programming</div>
-
-            <div class="skill">Java</div>
-
-            <div class="skill">HTML</div>
-
-            <div class="skill">Data Structures & Algorithms</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Projects -->
-    <section id="projects">
-
-        <h2>Projects</h2>
-
-        <div class="project">
-
-            <h3>Wanderly</h3>
+        <div class="about-box">
 
             <p>
-                A travel website designed to explore destinations
-                and travel packages.
+                I am an Artificial Intelligence and Machine Learning
+                engineering student. I enjoy learning programming,
+                exploring new technologies and building projects.
+                I am interested in Artificial Intelligence,
+                programming and improving my technical skills.
             </p>
-
-            <a
-                class="button"
-                href="https://rachana17-anand.github.io/rachana17-anand/"
-                target="_blank">
-                View Wanderly
-            </a>
 
         </div>
 
     </section>
 
 
-    <!-- Contact -->
-    <section id="contact">
 
-        <h2>Contact</h2>
+    <!-- =========================
+         SKILLS
+    ========================== -->
 
-        <p>Connect with me:</p>
+    <section id="skills">
 
-        <a
-            class="button"
-            href="https://github.com/rachana17-anand"
-            target="_blank">
-            GitHub
-        </a>
+        <h2>
+            My Skills
+        </h2>
 
-        <a
-            class="button"
-            href="https://www.linkedin.com/in/rachana-m-a-485a963a2/"
-            target="_blank">
-            LinkedIn
-        </a>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                Python
+            </div>
+
+
+            <div class="skill">
+                C Programming
+            </div>
+
+
+            <div class="skill">
+                Java
+            </div>
+
+
+            <div class="skill">
+                HTML
+            </div>
+
+
+            <div class="skill">
+                CSS
+            </div>
+
+
+            <div class="skill">
+                JavaScript
+            </div>
+
+
+            <div class="skill">
+                Data Structures & Algorithms
+            </div>
+
+        </div>
 
     </section>
 
 
-    <!-- Footer -->
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <h2>
+            My Projects
+        </h2>
+
+
+        <div class="projects">
+
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <h3>
+                    Personal Portfolio Website
+                </h3>
+
+
+                <p>
+                    A personal portfolio website created to showcase
+                    my skills, projects and interests as an
+                    Artificial Intelligence and Machine Learning student.
+                </p>
+
+
+                <a
+                    href="https://rachana17-anand.github.io/rachana17-anand/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-btn">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <h3>
+                    Student Registration Dashboard
+                </h3>
+
+
+                <p>
+                    A web-based student registration dashboard
+                    developed using HTML, CSS and JavaScript
+                    for managing student registration information.
+                </p>
+
+
+                <a
+                    href="https://rachana17-anand.github.io/rachana17-anand/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-btn">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <h3>
+                    Python Projects
+                </h3>
+
+
+                <p>
+                    Python programs created while learning
+                    programming concepts, data structures,
+                    algorithms and problem solving.
+                </p>
+
+
+                <a
+                    href="https://github.com/rachana17-anand"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-btn">
+
+                    View GitHub →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <h2>
+            Contact Me
+        </h2>
+
+
+        <div class="contact-box">
+
+            <p>
+                Thank you for visiting my portfolio.
+                You can connect with me through LinkedIn
+                or explore my work on GitHub.
+            </p>
+
+
+            <div class="social-links">
+
+
+                <!-- LinkedIn -->
+
+                <a
+                    href="https://www.linkedin.com/in/rachana-m-a-485a963a2/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🔗 LinkedIn
+
+                </a>
+
+
+
+                <!-- GitHub -->
+
+                <a
+                    href="https://github.com/rachana17-anand"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    💻 GitHub
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
-        <p>© 2026 Rachana M A | Portfolio</p>
+        <p>
+            © 2026 Rachana M A | AI & Machine Learning Student
+        </p>
 
     </footer>
+
 
 </body>
 
