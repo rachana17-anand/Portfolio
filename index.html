@@ -1,958 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Rachana M A | Portfolio</title>
 
-
     <style>
-
-        /* ================================
-           BASIC SETTINGS
-        ================================= */
-
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
 
-
         body {
-
-            font-family: Arial, Helvetica, sans-serif;
-
+            margin: 0;
+            font-family: Arial, sans-serif;
             color: #172033;
-
-            line-height: 1.6;
-
-            /* PROFESSIONAL BACKGROUND */
-
-            background: linear-gradient(
-                135deg,
-                #eaf2ff,
-                #f4edff,
-                #e8faff
-            );
-
-            min-height: 100vh;
+            background: linear-gradient(135deg, #eaf2ff, #f4edff, #e8faff);
+            font-size: 18px;
         }
-
-
-
-        /* ================================
-           NAVIGATION BAR
-        ================================= */
 
         nav {
-
-            width: 100%;
-
+            background: white;
             padding: 20px 8%;
-
             display: flex;
-
             justify-content: space-between;
-
-            align-items: center;
-
-            background: rgba(255, 255, 255, 0.90);
-
-            backdrop-filter: blur(10px);
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 1000;
-
-            box-shadow:
-                0 3px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 3px 15px #bbb;
         }
 
-
-        .logo {
-
-            font-size: 27px;
-
-            font-weight: bold;
-
+        nav h2 {
             color: #2457d6;
+            margin: 0;
         }
 
-
-        nav ul {
-
-            display: flex;
-
-            list-style: none;
-
-            gap: 30px;
-        }
-
-
-        nav ul li a {
-
-            text-decoration: none;
-
+        nav a {
             color: #172033;
-
-            font-size: 18px;
-
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-
-        nav ul li a:hover {
-
-            color: #2457d6;
-        }
-
-
-
-        /* ================================
-           HOME SECTION
-        ================================= */
-
-        .hero {
-
-            min-height: 85vh;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            padding: 70px 20px;
-        }
-
-
-        .hero h1 {
-
-            font-size: 58px;
-
-            color: #111827;
-
-            margin-bottom: 18px;
-        }
-
-
-        .hero h1 span {
-
-            color: #2457d6;
-        }
-
-
-        .hero h2 {
-
-            font-size: 30px;
-
-            color: #315fd3;
-
-            margin-bottom: 22px;
-        }
-
-
-        .hero p {
-
-            max-width: 850px;
-
-            font-size: 20px;
-
-            color: #4b5563;
-        }
-
-
-
-        /* ================================
-           MAIN BUTTON
-        ================================= */
-
-        .btn {
-
-            display: inline-block;
-
-            margin-top: 30px;
-
-            padding: 14px 32px;
-
-            background: #2457d6;
-
-            color: white;
-
             text-decoration: none;
-
-            border-radius: 30px;
-
-            font-size: 18px;
-
+            margin-left: 25px;
             font-weight: bold;
-
-            transition: all 0.3s ease;
-
-            box-shadow:
-                0 6px 18px rgba(36, 87, 214, 0.30);
         }
 
-
-        .btn:hover {
-
-            background: #1742ad;
-
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 10px 25px rgba(36, 87, 214, 0.35);
+        nav a:hover {
+            color: #2457d6;
         }
 
+        .home {
+            text-align: center;
+            padding: 100px 20px;
+        }
 
+        .home h1 {
+            font-size: 50px;
+        }
 
-        /* ================================
-           COMMON SECTION
-        ================================= */
+        .home span {
+            color: #2457d6;
+        }
+
+        .home h2 {
+            color: #315fd3;
+            font-size: 28px;
+        }
+
+        .home p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 20px;
+        }
 
         section {
-
-            padding: 90px 8%;
-
+            padding: 70px 8%;
             text-align: center;
         }
-
 
         section h2 {
-
-            font-size: 42px;
-
+            font-size: 38px;
             color: #111827;
-
-            margin-bottom: 35px;
         }
 
-
-        section h2::after {
-
-            content: "";
-
-            display: block;
-
-            width: 75px;
-
-            height: 4px;
-
-            background: #2457d6;
-
-            border-radius: 5px;
-
-            margin: 12px auto 0;
-        }
-
-
-
-        /* ================================
-           ABOUT SECTION
-        ================================= */
-
-        .about-box {
-
-            max-width: 950px;
-
+        .box {
+            background: white;
+            max-width: 850px;
             margin: auto;
-
-            background: rgba(255, 255, 255, 0.88);
-
-            padding: 40px;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px #ccc;
         }
 
-
-        .about-box p {
-
-            font-size: 20px;
-
-            color: #4b5563;
-        }
-
-
-
-        /* ================================
-           SKILLS SECTION
-        ================================= */
-
-        .skills-container {
-
+        .skills {
             display: flex;
-
             justify-content: center;
-
-            align-items: stretch;
-
             flex-wrap: wrap;
-
-            gap: 25px;
-
-            max-width: 1000px;
-
-            margin: 40px auto 0;
+            gap: 20px;
         }
-
 
         .skill {
-
-            min-width: 190px;
-
-            padding: 25px 35px;
-
             background: white;
-
-            border-radius: 16px;
-
-            font-size: 20px;
-
+            padding: 20px 30px;
+            border-radius: 15px;
             font-weight: bold;
-
-            color: #1f2937;
-
-            box-shadow:
-                0 8px 20px rgba(0, 0, 0, 0.08);
-
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px #ccc;
         }
-
 
         .skill:hover {
-
-            transform: translateY(-8px);
-
             background: #2457d6;
-
             color: white;
-
-            box-shadow:
-                0 12px 25px rgba(36, 87, 214, 0.30);
         }
 
-
-
-        /* ================================
-           PROJECT SECTION
-        ================================= */
-
-        .projects {
-
-            display: flex;
-
-            justify-content: center;
-
-            margin-top: 40px;
-        }
-
-
-        .project-card {
-
-            width: 380px;
-
+        .project {
             background: white;
-
-            padding: 35px;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.08);
-
-            transition: all 0.3s ease;
-        }
-
-
-        .project-card:hover {
-
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 15px 30px rgba(0, 0, 0, 0.12);
-        }
-
-
-        .project-card h3 {
-
-            font-size: 28px;
-
-            color: #2457d6;
-
-            margin-bottom: 15px;
-        }
-
-
-        .project-card p {
-
-            font-size: 18px;
-
-            color: #6b7280;
-
-            margin-bottom: 10px;
-        }
-
-
-        /* PROJECT BUTTON */
-
-        .project-btn {
-
-            display: inline-block;
-
-            margin-top: 18px;
-
-            padding: 12px 25px;
-
-            background: #2457d6;
-
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 25px;
-
-            font-size: 17px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-
-        .project-btn:hover {
-
-            background: #1742ad;
-
-            transform: translateY(-3px);
-        }
-
-
-
-        /* ================================
-           CONTACT SECTION
-        ================================= */
-
-        .contact-box {
-
-            max-width: 800px;
-
+            max-width: 400px;
             margin: auto;
-
-            background: white;
-
-            padding: 40px;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px #ccc;
         }
 
-
-        .contact-box p {
-
-            font-size: 19px;
-
-            color: #4b5563;
+        .project h3 {
+            color: #2457d6;
+            font-size: 28px;
         }
 
-
-
-        /* ================================
-           SOCIAL MEDIA BUTTONS
-        ================================= */
-
-        .social-links {
-
-            margin-top: 30px;
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 20px;
-
-            flex-wrap: wrap;
-        }
-
-
-        .social-links a {
-
+        .button {
             display: inline-block;
-
-            padding: 13px 28px;
-
             background: #2457d6;
-
             color: white;
-
+            padding: 12px 25px;
+            border-radius: 25px;
             text-decoration: none;
-
-            border-radius: 30px;
-
-            font-size: 18px;
-
-            font-weight: bold;
-
-            transition: all 0.3s ease;
-
-            box-shadow:
-                0 5px 15px rgba(36, 87, 214, 0.25);
+            margin-top: 15px;
         }
 
-
-        .social-links a:hover {
-
+        .button:hover {
             background: #1742ad;
-
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 8px 20px rgba(36, 87, 214, 0.35);
         }
-
-
-
-        /* ================================
-           FOOTER
-        ================================= */
 
         footer {
-
-            text-align: center;
-
-            padding: 25px;
-
             background: #172554;
-
             color: white;
-
-            font-size: 17px;
-
-            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
         }
-
-
-
-        /* ================================
-           MOBILE RESPONSIVE
-        ================================= */
-
-        @media (max-width: 768px) {
-
-
-            nav {
-
-                flex-direction: column;
-
-                gap: 15px;
-            }
-
-
-            nav ul {
-
-                gap: 15px;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-            }
-
-
-            .hero h1 {
-
-                font-size: 40px;
-            }
-
-
-            .hero h2 {
-
-                font-size: 23px;
-            }
-
-
-            .hero p {
-
-                font-size: 17px;
-            }
-
-
-            section h2 {
-
-                font-size: 32px;
-            }
-
-
-            .about-box {
-
-                padding: 25px;
-            }
-
-
-            .about-box p {
-
-                font-size: 18px;
-            }
-
-
-            .project-card {
-
-                width: 100%;
-
-                max-width: 380px;
-            }
-
-
-            .skill {
-
-                min-width: 150px;
-
-                padding: 20px;
-            }
-
-        }
-
     </style>
-
 </head>
-
-
 
 <body>
 
-
-    <!-- =================================
-         NAVIGATION
-    ================================== -->
-
     <nav>
+        <h2>Rachana M A</h2>
 
-        <div class="logo">
-            Rachana M A
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#project">Project</a>
+            <a href="#contact">Contact</a>
         </div>
-
-
-        <ul>
-
-            <li>
-                <a href="#home">Home</a>
-            </li>
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#projects">Project</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
-        </ul>
-
     </nav>
 
 
+    <div class="home" id="home">
 
-    <!-- =================================
-         HOME
-    ================================== -->
+        <h1>Hi, I'm <span>Rachana M A</span> 👋</h1>
 
-    <section class="hero" id="home">
-
-
-        <h1>
-
-            Hi, I'm
-            <span>Rachana M A</span>
-            👋
-
-        </h1>
-
-
-        <h2>
-
-            Artificial Intelligence & Machine Learning Student
-
-        </h2>
-
+        <h2>Artificial Intelligence & Machine Learning Student</h2>
 
         <p>
-
-            Welcome to my portfolio. I am an engineering student
-            interested in technology, programming and Artificial
-            Intelligence. I enjoy learning new technologies and
-            building creative projects.
-
+            Welcome to my portfolio. I am interested in technology,
+            programming and Artificial Intelligence.
         </p>
 
+    </div>
 
-        <a href="#about" class="btn">
-
-            Explore My Portfolio
-
-        </a>
-
-
-    </section>
-
-
-
-    <!-- =================================
-         ABOUT
-    ================================== -->
 
     <section id="about">
 
+        <h2>About Me</h2>
 
-        <h2>
-
-            About Me
-
-        </h2>
-
-
-        <div class="about-box">
-
+        <div class="box">
 
             <p>
-
                 I am an Artificial Intelligence and Machine Learning
                 engineering student. I enjoy learning programming,
                 exploring new technologies and building projects.
-                I am interested in improving my technical skills
-                and gaining practical knowledge through projects.
-
             </p>
-
 
         </div>
 
-
     </section>
 
-
-
-    <!-- =================================
-         SKILLS
-    ================================== -->
 
     <section id="skills">
 
+        <h2>My Skills</h2>
 
-        <h2>
+        <div class="skills">
 
-            My Skills
+            <div class="skill">Python</div>
 
-        </h2>
+            <div class="skill">HTML</div>
 
+            <div class="skill">Java</div>
 
-        <div class="skills-container">
+            <div class="skill">DSA</div>
 
-
-            <div class="skill">
-
-                Python
-
-            </div>
-
-
-            <div class="skill">
-
-                HTML
-
-            </div>
-
-
-            <div class="skill">
-
-                Java
-
-            </div>
-
-
-            <div class="skill">
-
-                Data Structures & Algorithms
-
-            </div>
-
-
-            <div class="skill">
-
-                C Programming
-
-            </div>
-
+            <div class="skill">C Programming</div>
 
         </div>
-
 
     </section>
 
 
+    <section id="project">
 
-    <!-- =================================
-         PROJECT
-    ================================== -->
+        <h2>My Project</h2>
 
-    <section id="projects">
+        <div class="project">
 
+            <h3>🌍 Wanderly</h3>
 
-        <h2>
+            <p>
+                Wanderly is a travel project designed to provide
+                an engaging and user-friendly experience for
+                exploring travel destinations.
+            </p>
 
-            My Project
-
-        </h2>
-
-
-        <div class="projects">
-
-
-            <div class="project-card">
-
-
-                <h3>
-
-                    🌍 Wanderly
-
-                </h3>
-
-
-                <p>
-
-                    Wanderly is a travel-based project designed
-                    to provide an engaging and user-friendly
-                    experience for exploring travel destinations.
-                    It showcases my interest in web development
-                    and creating useful digital experiences.
-
-                </p>
-
-
-                <a
-                    href="https://rachana17-anand.github.io/rachana17-anand/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-btn">
-
-                    View Wanderly →
-
-                </a>
-
-
-            </div>
-
+            <a class="button"
+               href="https://rachana17-anand.github.io/rachana17-anand/"
+               target="_blank">
+                View Wanderly →
+            </a>
 
         </div>
 
-
     </section>
 
-
-
-    <!-- =================================
-         CONTACT
-    ================================== -->
 
     <section id="contact">
 
+        <h2>Connect With Me</h2>
 
-        <h2>
+        <div class="box">
 
-            Connect With Me
+            <p>Find me on LinkedIn and GitHub.</p>
 
-        </h2>
+            <a class="button"
+               href="https://www.linkedin.com/in/rachana-m-a-485a963a2/"
+               target="_blank">
+                🔗 LinkedIn
+            </a>
 
-
-        <div class="contact-box">
-
-
-            <p>
-
-                Thank you for visiting my portfolio.
-                You can connect with me on LinkedIn
-                or explore my work and projects on GitHub.
-
-            </p>
-
-
-            <div class="social-links">
-
-
-                <!-- LINKEDIN -->
-
-                <a
-                    href="https://www.linkedin.com/in/rachana-m-a-485a963a2/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    🔗 LinkedIn
-
-                </a>
-
-
-
-                <!-- GITHUB -->
-
-                <a
-                    href="https://github.com/rachana17-anand"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    💻 GitHub
-
-                </a>
-
-
-            </div>
-
+            <a class="button"
+               href="https://github.com/rachana17-anand"
+               target="_blank">
+                💻 GitHub
+            </a>
 
         </div>
-
 
     </section>
 
 
-
-    <!-- =================================
-         FOOTER
-    ================================== -->
-
     <footer>
-
-        <p>
-
-            © 2026 Rachana M A | AI & Machine Learning Student
-
-        </p>
-
+        © 2026 Rachana M A | AI & Machine Learning Student
     </footer>
 
-
 </body>
-
 </html>
